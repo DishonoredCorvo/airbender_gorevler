@@ -19,14 +19,9 @@ std::vector<std::vector<T>> matris_yap(T x, int satir, int sutun) {
     return matris;
 }
 
-
-
-
 int main()
 {
     
-   
-
 }
 
 
