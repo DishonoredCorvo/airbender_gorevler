@@ -25,9 +25,8 @@ int main()
 
     int eleman;
 
-    myfile.close();
-
-    myfile.open("b.txt", std::ios::in);
+    myfile.clear();
+    myfile.seekg(0, std::ios::beg);
 
     if (!myfile.is_open()) {
         std::cout << "b.txt not opened";
