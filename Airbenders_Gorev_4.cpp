@@ -1,36 +1,36 @@
 #include <iostream>
 #include <string>
 
+struct Country;
+
 struct Province {
 
 	std::string name;
-	std::string* domain;
-}  ;
+	Country* domain;
+};
 
 struct Country {
 
 	std::string name;
 	Province* capital;
-}  ;
-
+};
 
 
 int main() {
 	
-
 	Province Istanbul;
 	Province Ankara;
 
 	Ankara.name = "Ankara";
-	Istanbul.name = "Ýstanbul";
+	Istanbul.name = "Ä°stanbul";
 	
 	Country Turkey;
 
-	Turkey.name = "Türkiye";
+	Turkey.name = "TÃ¼rkiye";
 	Turkey.capital = &Ankara;
 
-	Ankara.domain = &(Turkey.name);
-	Istanbul.domain = &(Turkey.name);
+	Ankara.domain = &Turkey;
+	Istanbul.domain = &Turkey;
 
 	std::cout << (*Turkey.capital).name << std::endl;
 
