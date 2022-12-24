@@ -3,11 +3,10 @@
 #include <cmath>
 #include <iostream>
 
-int poly_count = 0; 
-
+ 
 class RegularPolygon {
 
-    
+    static int poly_count;
     int n;
     float angle;
 
@@ -33,10 +32,17 @@ public:
         return knr;
     }
 
+    static int get_poly_count() {
+
+        return poly_count;
+    }
+
     ~RegularPolygon() {
         poly_count--;
     }
 };
+
+int RegularPolygon::poly_count = 0;
 
 
 int main()
@@ -45,10 +51,12 @@ int main()
     std::cout << kare.area(12) << std::endl;
     std::cout << kare.lenght(144) << std::endl;
 
+    std::cout << RegularPolygon::get_poly_count() <<std::endl;
+
     RegularPolygon altigen(6);
     std::cout << altigen.area(15) << std::endl;
     std::cout << altigen.lenght(584) << std::endl;
 
-    std::cout << poly_count; 
+    std::cout << RegularPolygon::get_poly_count() << std::endl; 
     
 }
