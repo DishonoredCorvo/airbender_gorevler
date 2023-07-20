@@ -1,19 +1,15 @@
 // 1/2 gt2
-
 #include <iostream>
+#define G 9.80665
 
 int main()
 {
-    
-    double yol,sure,g_ivmesi;
 
-    g_ivmesi = 9.80665;
+    double distance, t;
 
     std::cout << "lutfen gecen sureyi saniye cinsinden giriniz \n";
-    std::cin >> sure;
-    yol = (sure * sure * g_ivmesi) / 2;
-    std::cout << "cismin aldigi yol: " << yol << "metre";
-    
-
+    std::cin >> t;
+    distance = (t * t * G) / 2;
+    std::cout << "cismin aldigi yol: " << distance << "metre";
 
 }
